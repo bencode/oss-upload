@@ -1,0 +1,33 @@
+{
+  "name": "ali-oss-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "ali-oss-uploader": "bin/upload.js"
+  },
+  "scripts": {
+    "test": "",
+    "lint": "eslint bin"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-bce": "^4.0.0"
+  },
+  "dependencies": {
+    "ali-oss": "^6.0.1",
+    "bluebird": "^3.5.1",
+    "commander": "^2.17.1",
+    "glob": "^7.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bencode/ali-oss-uploader.git"
+  },
+  "author": "bencode@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bencode/ali-oss-uploader/issues"
+  },
+  "homepage": "https://github.com/bencode/ali-oss-uploader#readme"
+}
