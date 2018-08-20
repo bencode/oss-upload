@@ -33,6 +33,8 @@ npm install --save ali-oss-uploader
 ali-oss-uploader pirv/static -o / -c config/oss.secret.json
 ```
 
+4. for help
+
 ```shell
 ali-oss-uploader -h  # for help
 
