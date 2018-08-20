@@ -1,13 +1,12 @@
 {
-  "name": "ali-oss-uploader",
+  "name": "@bcd/oss-upload",
   "version": "1.0.0",
   "description": "upload local static files to ali oss",
   "main": "index.js",
   "bin": {
-    "ali-oss-uploader": "bin/upload.js"
+    "oss-upload": "bin/upload.js"
   },
   "scripts": {
-    "test": "",
     "lint": "eslint bin"
   },
   "devDependencies": {
@@ -22,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bencode/ali-oss-uploader.git"
+    "url": "git+https://github.com/bencode/oss-upload.git"
   },
   "author": "bencode@163.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bencode/ali-oss-uploader/issues"
+    "url": "https://github.com/bencode/oss-upload/issues"
   },
-  "homepage": "https://github.com/bencode/ali-oss-uploader#readme"
+  "homepage": "https://github.com/bencode/oss-upload#readme"
 }

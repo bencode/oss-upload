@@ -1,4 +1,4 @@
-# ali-oss-uploader
+# oss-upload
 
 
 ## Usage
@@ -6,7 +6,7 @@
 ### 1. Install package
 
 ```shell
-npm install --save ali-oss-uploader
+npm install --save @bcd/oss-upload
 ```
 
 ### 2. Add an oss config file `oss.secret.json` under your project's directory.
@@ -30,22 +30,22 @@ npm install --save ali-oss-uploader
 ### 3. Run upload command
 
 ```shell
-ali-oss-uploader dist -o /collab-static -c config/oss.secret.json
+oss-upload dist -o /collab-static -c config/oss.secret.json
 
-# upload to backet root dir
-ali-oss-uploader priv/static -o / -c config/oss.secret.json
+ upload to backet root dir
+oss-upload priv/static -o / -c config/oss.secret.json
 
 # you can omit arg `-c` if put config file in default location: $project/oss.secret.json
-ali-oss-uploader dist -o '/'
+oss-upload dist -o '/'
 ```
 
 ### 4. For help
 
 ```shell
-ali-oss-uploader -h  # for help
+oss-upload -h  # for help
 
 
-Usage: ali-oss-uploader [options] <dir>
+Usage: oss-upload [options] <dir>
 
   Options:
 
