@@ -9,7 +9,7 @@
 npm install --save ali-oss-uploader
 ```
 
-2. add an oss config file `oss.secret.json` in your project.
+2. add an oss config file `oss.secret.json` under your project directory.
 
 ```json
 {
@@ -18,9 +18,9 @@ npm install --save ali-oss-uploader
   "accessKeyId": "LBAIYlDPfrk6reuW",
   "accessKeySecret": "avfkJIKe0L5tayleyjBmT8wlRKBmZd"
 }
-``**
+```
 
-**you should add this secret file to project `.gitignore` for preventing commit.**
+**you should add this secret file to project's `.gitignore` file for preventing commit.**
 
 
 ```
@@ -35,4 +35,14 @@ ali-oss-uploader pirv/static -o / -c config/oss.secret.json
 
 ```shell
 ali-oss-uploader -h  # for help
+
+
+Usage: ali-oss-uploader [options] <dir>
+
+  Options:
+
+    -V, --version        output the version number
+    -o, --output <dir>   remote directory
+    -c, --config <file>  oss config file
+    -h, --help           output usage information
 ```
