@@ -1,7 +1,7 @@
 {
   "name": "ali-oss-uploader",
   "version": "1.0.0",
-  "description": "",
+  "description": "upload local static files to ali oss",
   "main": "index.js",
   "bin": {
     "ali-oss-uploader": "bin/upload.js"
