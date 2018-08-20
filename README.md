@@ -3,13 +3,13 @@
 
 ## Usage
 
-1. install package
+1. Install package
 
 ```shell
 npm install --save ali-oss-uploader
 ```
 
-2. add an oss config file `oss.secret.json` under your project directory.
+2. Add an oss config file `oss.secret.json` under your project's directory.
 
 ```json
 {
@@ -20,20 +20,26 @@ npm install --save ali-oss-uploader
 }
 ```
 
-**you should add this secret file to project's `.gitignore` file for preventing commit.**
+**you should add this secret file to `.gitignore` file for preventing commit.**
 
 
 ```
 *.secret.*
 ```
 
-3. run upload command
+3. Run upload command
 
 ```shell
-ali-oss-uploader pirv/static -o / -c config/oss.secret.json
+ali-oss-uploader dist -o /collab-static -c config/oss.secret.json
+
+# upload to backet root dir
+ali-oss-uploader priv/static -o / -c config/oss.secret.json
+
+# you can omit arg `-c` if put config file in default location: $project/oss.secret.json
+ali-oss-uploader dist -o '/'
 ```
 
-4. for help
+4. For help
 
 ```shell
 ali-oss-uploader -h  # for help
