@@ -3,13 +3,13 @@
 
 ## Usage
 
-1. Install package
+### 1. Install package
 
 ```shell
 npm install --save ali-oss-uploader
 ```
 
-2. Add an oss config file `oss.secret.json` under your project's directory.
+### 2. Add an oss config file `oss.secret.json` under your project's directory.
 
 ```json
 {
@@ -27,7 +27,7 @@ npm install --save ali-oss-uploader
 *.secret.*
 ```
 
-3. Run upload command
+### 3. Run upload command
 
 ```shell
 ali-oss-uploader dist -o /collab-static -c config/oss.secret.json
@@ -39,7 +39,7 @@ ali-oss-uploader priv/static -o / -c config/oss.secret.json
 ali-oss-uploader dist -o '/'
 ```
 
-4. For help
+### 4. For help
 
 ```shell
 ali-oss-uploader -h  # for help
