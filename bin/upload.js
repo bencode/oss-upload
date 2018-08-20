@@ -37,8 +37,8 @@ async function main({ args: [from], output, config }) {
   }
 
   from = pathUtil.resolve(from);
-  const configPath = pathUtil.resolve(config || 'oss.secret.json');
-  const configObj = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+  const configPath = pathUtil.resolve(config || 'oss.config');
+  const configObj = require(configPath);
   await upload(from, output, configObj);
 }
 
