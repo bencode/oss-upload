@@ -1,5 +1,5 @@
 {
-  "name": "@bcd/oss-upload",
+  "name": "ali-oss-upload-cli",
   "version": "1.0.0",
   "description": "upload local static files to ali oss",
   "main": "index.js",

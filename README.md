@@ -6,7 +6,7 @@
 ### 1. Install package
 
 ```shell
-npm install --save @bcd/oss-upload
+npm install --save ali-oss-upload-cli
 ```
 
 ### 2. Add an oss config file `oss.secret.json` under your project's directory.
