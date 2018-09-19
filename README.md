@@ -37,6 +37,7 @@ module.exports = {
 ### 3. Run upload command
 
 ```shell
+# upload dist dir to remote `/collab-static`
 oss-upload dist -o /collab-static -c config/oss.secret.json
 
 # upload to backet root dir
