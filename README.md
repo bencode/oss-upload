@@ -22,7 +22,7 @@ npm install --save ali-oss-upload-cli
 
 **you should add this secret file to `.gitignore` file for preventing commit.**
 
-thie config file can be a node module, then you can read id and secret from env.
+thie config file can be a node module and you can read id and secret from env.
 
 ```js
 module.exports = {
