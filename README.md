@@ -15,8 +15,8 @@ npm install --save ali-oss-upload-cli
 {
   "region": "oss-cn-shanghai",
   "bucket": "demo-static",
-  "accessKeyId": "LBAIYlDPfrk6reuW",
-  "accessKeySecret": "avfkJIKe0L5tayleyjBmT8wlRKBmZd"
+  "accessKeyId": "xxxxxx",
+  "accessKeySecret": "xxxxxx"
 }
 ```
 
