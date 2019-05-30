@@ -23,6 +23,7 @@ program
   .version(pkg.version)
   .arguments('<dir>')
   .option('-o, --output <dir>', 'remote directory')
+  .option('-C, --clear', 'clear remote directory before uploading')
   .option('-c, --config <file>', 'oss config file')
   .parse(process.argv);
 
@@ -30,7 +31,7 @@ program
 main(program);
 
 
-async function main({ args: [from], output, config }) {
+async function main({ args: [from], output, clear, config }) {
   if (!from || output === undefined) {
     program.outputHelp();
     return;
@@ -39,14 +40,22 @@ async function main({ args: [from], output, config }) {
   from = pathUtil.resolve(from);
   const configPath = pathUtil.resolve(config || 'oss.config');
   const configObj = require(configPath);
-  await upload(from, output, configObj);
+  await upload(from, output, clear, configObj);
 }
 
 
-async function upload(from, to, config) {
-  const files = await promisify(glob)('**/*.*', { cwd: from });
+async function upload(from, to, clear, config) {
   const store = new OSS(config);
-
+  if(clear){
+    let result = await store.list({prefix: to});
+    if(result.objects){
+      const objects = result.objects.map((object)=>object.name);
+      result = await store.deleteMulti(objects);
+      p(`delete ${result.deleted.length} files.`);
+      result.deleted.map((path)=>p(`  ${path}`));
+    }
+  }
+  const files = await promisify(glob)('**/*.*', { cwd: from });
   each(files, async file => {
     const path = pathUtil.join(from, file);
     p(`upload: ${file}`);
