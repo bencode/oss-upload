@@ -46,15 +46,9 @@ async function main({ args: [from], output, clear, config }) {
 
 async function upload(from, to, clear, config) {
   const store = new OSS(config);
-  if(clear){
-    let result = await store.list({prefix: to});
-    if(result.objects){
-      const objects = result.objects.map((object)=>object.name);
-      result = await store.deleteMulti(objects);
-      p(`delete ${result.deleted.length} files.`);
-      result.deleted.map((path)=>p(`  ${path}`));
-    }
-  }
+
+  if (clear) await deleteByPrefix(store, to);
+
   const files = await promisify(glob)('**/*.*', { cwd: from });
   each(files, async file => {
     const path = pathUtil.join(from, file);
@@ -63,6 +57,26 @@ async function upload(from, to, clear, config) {
     const res = await store.put(dist, fs.createReadStream(path));
     p(`ok: ${res.url}`);
   });
+}
+
+
+async function deleteByPrefix(store, prefix) {
+  const MAX_KEYS = 1000;
+  let allFiles = [];
+
+  async function remove() {
+    const result = await store.list({ prefix: prefix, 'max-keys': MAX_KEYS });
+    if (result.objects) {
+      const objects = result.objects.map(object => object.name);
+      const deleted = await store.deleteMulti(objects);
+      allFiles = allFiles.concat(deleted.deleted);
+      if (result.objects.length === MAX_KEYS) await remove();
+    }
+  }
+
+  await remove();
+  p(`delete ${allFiles.length} files.`);
+  allFiles.map(path => p(`  ${path}`));
 }
 
 
