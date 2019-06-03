@@ -22,7 +22,7 @@ npm install --save ali-oss-upload-cli
 
 **you should add this secret file to `.gitignore` file for preventing commit.**
 
-thie config file can be a node module and you can read id and secret from env.
+the config file can be a node module and you can read id and secret from env.
 
 ```js
 module.exports = {
@@ -40,14 +40,16 @@ module.exports = {
 # upload dist dir to remote `/collab-static`
 oss-upload dist -o /collab-static -c config/oss.secret.json
 
-# upload to backet root dir
+# upload to bucket root dir
 oss-upload priv/static -o / -c config/oss.secret.json
 
 # config can be a node module
 oss-uplaod priv/static -o / -c config/oss.config.js
 
-# you can omit arg `-c` if config file in thie default location: $project/oss.config.js
+# you can omit arg `-c` if config file in the default location: $project/oss.config.js
 oss-upload dist -o '/'
+# clear remote directory before uploading
+oss-upload dist -o '/' -C
 ```
 
 ### 4. For help
@@ -62,6 +64,7 @@ Usage: oss-upload [options] <dir>
 
     -V, --version        output the version number
     -o, --output <dir>   remote directory
+    -C, --clear          clear remote directory before uploading
     -c, --config <file>  oss config file
     -h, --help           output usage information
 ```
