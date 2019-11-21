@@ -49,7 +49,7 @@ async function upload(from, to, clear, config) {
 
   if (clear) await deleteByPrefix(store, to);
 
-  const files = await promisify(glob)('**/*.*', { cwd: from });
+  const files = await promisify(glob)('**/*.*', { cwd: from, nodir: true });
   each(files, async file => {
     const path = pathUtil.join(from, file);
     p(`upload: ${file}`);
