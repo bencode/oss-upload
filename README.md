@@ -32,10 +32,10 @@ yarn add --dev ali-oss-upload-cli
 
 ```js
 module.exports = {
-  region: 'oss-cn-qingdao',
-  bucket: 'qgt-paper',
-  accessKeyId: process.env.TEST_OSS_ID,
-  accessKeySecret: process.env.TEST_OSS_SECRET,
+  region: 'oss-cn-shanghai',
+  bucket: 'pageviver',
+  accessKeyId: process.env.OSS_ACCESS_KEY_ID,
+  accessKeySecret: process.env.OSS_ACCESS_KEY_SECRET
 };
 ```
 
