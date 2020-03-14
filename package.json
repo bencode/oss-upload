@@ -1,6 +1,6 @@
 {
   "name": "ali-oss-upload-cli",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "upload local static files to ali oss",
   "main": "index.js",
   "bin": {
