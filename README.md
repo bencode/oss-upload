@@ -1,4 +1,4 @@
-# oss-upload
+# ali-oss-upload-cli
 
 
 ## Usage
@@ -9,7 +9,13 @@
 npm install --save ali-oss-upload-cli
 ```
 
-### 2. Add an oss config file `oss.secret.json` under your project's directory.
+or
+
+```shell
+yarn add --dev ali-oss-upload-cli
+```
+
+### 2. Add an config file `oss.secret.json` under your project's directory.
 
 ```json
 {
@@ -20,9 +26,9 @@ npm install --save ali-oss-upload-cli
 }
 ```
 
-**you should add this secret file to `.gitignore` file for preventing commit.**
+**You should add this secret file to `.gitignore` file for preventing commit.**
 
-[Option] the config file can also be a js module and you can read `id` and `secret` from process env.
+[Optional] the config file can also be a js module then you can read `id` and `secret` from process env.
 
 ```js
 module.exports = {
@@ -46,17 +52,17 @@ oss-upload priv/static -o / -c config/oss.secret.json
 # config can be a node module
 oss-uplaod priv/static -o / -c config/oss.config.js
 
-# you can omit arg `-c` if config file in the default location: $project/oss.config.js
+# omit `-c` if config file is in the default location: $project/oss.config.js
 oss-upload dist -o '/'
+
 # clear remote directory before uploading
 oss-upload dist -o '/' -C
 ```
 
-### 4. For help
+### 4. show help
 
 ```shell
-oss-upload -h  # for help
-
+oss-upload -h
 
 Usage: oss-upload [options] <dir>
 
