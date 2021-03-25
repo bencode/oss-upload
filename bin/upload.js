@@ -29,7 +29,10 @@ program
   .parse(process.argv);
 
 
-main(program);
+main({
+  ...program.opts(),
+  args: program.args
+});
 
 
 async function main({ args: [from], output, clear, config }) {
