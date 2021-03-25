@@ -8,6 +8,7 @@ const OSS = require('ali-oss');
 const program = require('commander');
 const { promisify, each } = require('bluebird');
 
+require('dotenv').config();
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
