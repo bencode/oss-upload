@@ -36,7 +36,7 @@ filter with [glob](https://github.com/isaacs/node-glob)
 
 
 ```shell
-oss-upload dist -o /static --glob=**/*.js
+oss-upload dist -o /static --filter=**/*.js
 ```
 
 You can specify all parameters in the command line, which is convenient for use in CI environments.
