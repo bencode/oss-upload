@@ -1,24 +1,23 @@
 {
   "name": "ali-oss-upload-cli",
-  "version": "1.4.1",
-  "description": "upload local static files to ali oss",
+  "version": "2.0.0",
+  "description": "A command line tool for transferring local files to Ali OSS, supports integration into CI environments.",
   "main": "index.js",
   "bin": {
-    "oss-upload": "bin/upload.js"
+    "oss-upload": "lib/upload.js"
   },
   "scripts": {
-    "lint": "eslint bin"
+    "lint": "eslint lib"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
-    "eslint-config-bce": "^7.0.0"
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4"
   },
   "dependencies": {
     "ali-oss": "^6.0.1",
-    "bluebird": "^3.5.1",
-    "commander": "^7.2.0",
-    "dotenv": "^8.2.0",
-    "glob": "^7.1.2"
+    "dotenv": "^16.4.1",
+    "glob": "^10.3.0",
+    "yargs": "^17.7.2"
   },
   "repository": {
     "type": "git",
