@@ -1,3 +1,8 @@
 {
-  extends: 'bce'
+  extends: 'eslint-config-airbnb',
+  rules: {
+    semi: [2, 'never'],
+    arrow-parens: [2, 'as-needed'],
+    no-use-before-define: [2, { functions: false }]
+  }
 }

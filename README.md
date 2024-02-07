@@ -1,76 +1,59 @@
 # ali-oss-upload-cli
 
+CLI to upload files to Ali OSS。
 
 ## Usage
 
-### 1. Install package
+### 1. install
 
 ```shell
-npm install --save ali-oss-upload-cli
+npm install --save-dev ali-oss-upload-cli
 ```
 
-or
+### 2. update .env file
 
 ```shell
-yarn add --dev ali-oss-upload-cli
+OSS_REGION=oss-cn-hangzhou
+OSS_BUCKET=lesscap
+OSS_KEY=xxx
+OSS_SECRET=xxx
 ```
 
-### 2. Add an config file `oss.secret.json` under your project's directory.
+** Don't forget to add the .env file to .gitignore. **
 
-```json
-{
-  "region": "oss-cn-shanghai",
-  "bucket": "demo-static",
-  "accessKeyId": "xxxxxx",
-  "accessKeySecret": "xxxxxx"
-}
-```
+### 3. upload
 
-**You should add this secret file to `.gitignore` file for preventing commit.**
-
-[Optional] the config file can also be a js module then you can read `id` and `secret` from process env.
-
-```js
-module.exports = {
-  region: 'oss-cn-shanghai',
-  bucket: 'pageviver',
-  accessKeyId: process.env.OSS_ACCESS_KEY_ID,
-  accessKeySecret: process.env.OSS_ACCESS_KEY_SECRET
-};
-```
-
-
-### 3. Run upload command
+upload dist dir to remote `/static`
 
 ```shell
-# upload dist dir to remote `/collab-static`
-oss-upload dist -o /collab-static -c config/oss.secret.json
+oss-upload dist -o /static
 
 # upload to bucket root dir
-oss-upload priv/static -o / -c config/oss.secret.json
+oss-upload dist -o /
+```
 
-# config can be a node module
-oss-uplaod priv/static -o / -c config/oss.config.js
+filter with [glob](https://github.com/isaacs/node-glob)
 
-# omit `-c` if config file is in the default location: $project/oss.config.js
-oss-upload dist -o '/'
 
-# clear remote directory before uploading
-oss-upload dist -o '/' -C
+```shell
+oss-upload dist -o /static --glob=**/*.js
+```
+
+You can specify all parameters in the command line, which is convenient for use in CI environments.
+
+```shell
+oss-upload dist -o /static --region=oss-cn-hangzhou --bucket=lesscap --key=xxx --srcret=xxx
+```
+
+Can specify a different .env file
+
+``` shell
+oss-upload dist -o /static --envfile=.env.test
+
 ```
 
 ### 4. show help
 
 ```shell
 oss-upload -h
-
-Usage: oss-upload [options] <dir>
-
-  Options:
-
-    -V, --version        output the version number
-    -o, --output <dir>   remote directory
-    -C, --clear          clear remote directory before uploading
-    -c, --config <file>  oss config file
-    -h, --help           output usage information
 ```
