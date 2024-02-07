@@ -1,6 +1,6 @@
 {
   "name": "ali-oss-upload-cli",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A command line tool for transferring local files to Ali OSS, supports integration into CI environments.",
   "main": "index.js",
   "bin": {
