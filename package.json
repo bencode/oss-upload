@@ -24,6 +24,9 @@
     "type": "git",
     "url": "git+https://github.com/bencode/oss-upload.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "author": "bencode@163.com",
   "bugs": {
     "url": "https://github.com/bencode/oss-upload/issues"
