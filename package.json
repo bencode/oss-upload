@@ -15,16 +15,16 @@
   },
   "dependencies": {
     "ali-oss": "^6.0.1",
+    "commander": "^12.0.0",
+    "debug": "^4.3.4",
     "dotenv": "^16.4.1",
-    "glob": "^10.3.0",
-    "yargs": "^17.7.2"
+    "glob": "^10.3.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bencode/oss-upload.git"
   },
   "author": "bencode@163.com",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bencode/oss-upload/issues"
   },

@@ -1,6 +1,6 @@
 # ali-oss-upload-cli
 
-A command line tool for transferring files to Ali OSS。
+CLI to upload files to Ali OSS。
 
 ## Usage
 
@@ -34,6 +34,7 @@ oss-upload dist -o /
 
 filter with [glob](https://github.com/isaacs/node-glob)
 
+
 ```shell
 oss-upload dist -o /static --glob=**/*.js
 ```
@@ -44,7 +45,14 @@ You can specify all parameters in the command line, which is convenient for use 
 oss-upload dist -o /static --region=oss-cn-hangzhou --bucket=lesscap --key=xxx --srcret=xxx
 ```
 
-### 5. show help
+Can specify a different .env file
+
+``` shell
+oss-upload dist -o /static --envfile=.env.test
+
+```
+
+### 4. show help
 
 ```shell
 oss-upload -h
