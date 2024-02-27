@@ -1,59 +1,64 @@
-# ali-oss-upload-cli
-
-CLI to upload files to Ali OSS。
+# oss-upload
 
 ## Usage
 
-### 1. install
+### 1. Installation
+
+To install, run the following command:
 
 ```shell
 npm install --save-dev ali-oss-upload-cli
 ```
 
-### 2. update .env file
+### 2. Update the .env File
 
-```shell
+Configure your environment variables as follows:
+
+```
 OSS_REGION=oss-cn-hangzhou
 OSS_BUCKET=lesscap
-OSS_KEY=xxx
-OSS_SECRET=xxx
+OSS_ACCESS_KEY_ID=xxx
+OSS_ACCESS_KEY_SECRET=xxx
 ```
 
-** Don't forget to add the .env file to .gitignore. **
+**Important: Ensure the .env file is added to your .gitignore to protect your credentials.**
 
-### 3. upload
+### 3. Upload Files
 
-upload dist dir to remote `/static`
+To upload the dist directory to the remote /static directory, use:
 
-```shell
+```
 oss-upload dist -o /static
+```
 
-# upload to bucket root dir
+To upload to the bucket's root directory:
+
+```
 oss-upload dist -o /
 ```
 
-filter with [glob](https://github.com/isaacs/node-glob)
+To filter files using glob patterns (e.g., only .js files):
 
-
-```shell
+```
 oss-upload dist -o /static --filter=**/*.js
 ```
 
-You can specify all parameters in the command line, which is convenient for use in CI environments.
+For CI environments, you can specify all parameters directly in the command line for convenience:
 
-```shell
-oss-upload dist -o /static --region=oss-cn-hangzhou --bucket=lesscap --key=xxx --srcret=xxx
+```
+oss-upload dist -o /static --region=oss-cn-hangzhou --bucket=lesscap --key=xxx --secret=xxx
 ```
 
-Can specify a different .env file
+To specify a different .env file:
 
-``` shell
+```
 oss-upload dist -o /static --envfile=.env.test
-
 ```
 
-### 4. show help
+### 4. Display Help
 
-```shell
+To view all available commands and options, run:
+
+```
 oss-upload -h
 ```
