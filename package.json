@@ -18,7 +18,8 @@
     "commander": "^13.1.0",
     "debug": "^4.3.4",
     "dotenv": "^16.4.1",
-    "glob": "^11.0.2"
+    "glob": "^11.0.2",
+    "micromatch": "^4.0.8"
   },
   "repository": {
     "type": "git",
